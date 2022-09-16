@@ -24,3 +24,7 @@ createdAt
 - Criação de novo anúncio
 - Listagem de anúcios por game
 - Buscar discord pelo ID do anúncio
+
+
+## Melhorias
+[ ] Validações utilizando a biblioteca zod javascript
