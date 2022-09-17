@@ -6,12 +6,12 @@ import {
   Inter_900Black
 } from '@expo-google-fonts/inter';
 
-import { StatusBar, SafeAreaView, ScrollView } from 'react-native';
+import { Routes } from './src/routes';
+
+import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 
 import { Background } from './src/components/Background';
 import { Loading } from './src/components/Loading';
-
-import { Home } from './src/screens/Home';
 
 
 export default function App() {
@@ -26,13 +26,8 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-
-      <SafeAreaView>
-        <ScrollView>
-          {/* Exibe loading enquanto a fonte é carregada */}
-          { fontsLoaded ? <Home/> : <Loading /> }
-        </ScrollView>
-      </SafeAreaView>
+        {/* Exibe loading enquanto a fonte é carregada */}
+        { fontsLoaded ? <Routes /> : <Loading /> }
     </Background>
   );
 }

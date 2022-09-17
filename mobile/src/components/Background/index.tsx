@@ -17,7 +17,7 @@ export function Background({ children }: BackgroundProps) {
       defaultSource={img}
       style={styles.container}
     >
-      { children }
+        { children }
     </ImageBackground>
   )
 }
