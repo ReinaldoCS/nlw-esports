@@ -1,3 +1,5 @@
+import "keen-slider/keen-slider.min.css"
+
 interface GameBunnerProps {
   bannerUrl: string;
   title: string;
@@ -6,7 +8,8 @@ interface GameBunnerProps {
 
 export function GameBunner({ bannerUrl, title, adsCount }: GameBunnerProps) {
   return (
-      <a href="/" className='relative rounded-lg overflow-hidden'>
+    <div className="keen-slider__slide rounded-lg overflow-hidden duration-500 hover:scale-105 min-w-[180px]">
+      <a href="/" className='relative'>
         <img src={bannerUrl} alt={title} />
       
         <div className='bg-game-gradient w-full pt-16 pb-4 px-4 absolute bottom-0'>
@@ -14,5 +17,6 @@ export function GameBunner({ bannerUrl, title, adsCount }: GameBunnerProps) {
           <span className='text-zinc-300 text-sm'>{adsCount} anúncio(s)</span>
         </div>
       </a>
+    </div>
     )
   }
