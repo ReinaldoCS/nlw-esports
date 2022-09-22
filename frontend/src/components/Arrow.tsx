@@ -7,7 +7,10 @@ interface ArrowProps {
 
 export function Arrow({ left, onClick }: ArrowProps) {
   return (
-    <button onClick={onClick}>
+    <button 
+      onClick={onClick}
+      className="invisible hidden md:visible md:block"
+    >
       {
         left
         ? <CaretLeft size={32} className="mr-6 text-zinc-400 hover:text-zinc-500 duration-500" /> 
