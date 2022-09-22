@@ -25,21 +25,24 @@ interface Game {
 }
 
 function App() {
+  const [games, setGames] = useState<Game[]>([]);
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    mode: 'snap',
     initial: 0,
     slides: {
       perView: "auto",
       spacing: 24,
-    },
+    }
   });
-
-  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
     axios('http://localhost:3333/games').then(response => {
       setGames(response.data)
     });
   }, []);
+
+  if (!games || !games.length) return null;
   
   return (
     <div className="max-w-[90%] mx-auto flex items-center flex-col">
@@ -55,12 +58,11 @@ function App() {
           {' '}esta aqui.
       </h1>
 
-      <div className='navigation-wrapper mt-16 max-w-full flex'>
-        <Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()}/>
+      <div className='mt-16 max-w-full flex'>
+        <Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} />
         <div
           ref={sliderRef}
           className="keen-slider"
-          // className='grid grid-cols-6 gap-6 mt-16'
         >
           {games.map(game => (
             <GameBunner

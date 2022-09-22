@@ -5,7 +5,7 @@ interface ArrowProps {
   onClick: (e: any) => void;
 }
 
-export function Arrow({left, onClick}: ArrowProps) {
+export function Arrow({ left, onClick }: ArrowProps) {
   return (
     <button onClick={onClick}>
       {
