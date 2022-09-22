@@ -1,8 +1,8 @@
 # Front-end
 
 ### Elevando para próximo nível
-- [ ] Layout responsivo.
-- [ ] Carrocel na listagem de jogos com keen-slider.
+- [x] Layout responsivo.
+- [z] Carrocel na listagem de jogos com keen-slider.
 - [ ] Usar componente de select no Radix UI.
 - [ ] Validações do formulário com react-hook-form com Zod.
 - [ ] Login peo Discord ou Twitch
